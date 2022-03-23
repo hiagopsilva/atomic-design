@@ -4,6 +4,7 @@ import { Image, Text, View } from 'react-native';
 import { ProfileIcon } from '../../../global/styles/icons';
 import { styles } from '../../../pages/Feed/styles';
 import PostAvatar from '../../atoms/PostAvatar';
+import PostUsername from '../../atoms/PostUsername';
 import { PostProps } from '../../organisms/Post';
 
 type Props = {
@@ -16,7 +17,7 @@ const PostHeader: FC<Props> = ({username, location}) => {
     <View style={styles.postHeader}>
       <PostAvatar />
       <View>
-        <Text style={styles.postUsername}>{username}</Text>
+        <PostUsername value={username} />
         <Text style={styles.postLocation}>{location}</Text>
       </View>
     </View>
