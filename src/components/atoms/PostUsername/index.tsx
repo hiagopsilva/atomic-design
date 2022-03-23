@@ -8,7 +8,7 @@ type Props = TextProps & {
 }
 
 const PostUsername: FC<Props> = ({value}) => {
-  return <Text style={styles.username}>{value}</Text>
+  return <Text style={styles.postUsername}>{value}</Text>
  
 };
 
