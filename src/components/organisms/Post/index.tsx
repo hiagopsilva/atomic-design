@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { Image, ImageProps, Text, View } from 'react-native';
+import {  ImageProps, Text, View } from 'react-native';
 
 import { styles } from '../../../pages/Feed/styles';
 import { PostPhoto } from '../../atoms/PostPhoto';
+import PostAbout from '../../molecules/PostAbout';
 import PostHeader from '../../molecules/PostHeader';
 import PostOptions from '../../molecules/PostOptions';
 
@@ -36,10 +37,7 @@ const Post: FC<Props> = ({data}) => {
     
     <PostOptions />
 
-    <View style={styles.postAbout}>
-      <Image source={data.lastLiked.avatar} style={styles.lastLiked} />
-      <Text style={styles.likes}>{data.likes}</Text>
-    </View>
+    <PostAbout avatar={data.lastLiked.avatar} likes={data.likes} />
     <Text style={styles.description}>{data.description}</Text>
   </View>
 </View>
