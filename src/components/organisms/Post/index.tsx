@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import {  ImageProps, Text, View } from 'react-native';
 
 import { styles } from '../../../pages/Feed/styles';
+import PostDescription from '../../atoms/PostDescription';
 import { PostPhoto } from '../../atoms/PostPhoto';
 import PostAbout from '../../molecules/PostAbout';
 import PostHeader from '../../molecules/PostHeader';
@@ -37,8 +38,12 @@ const Post: FC<Props> = ({data}) => {
     
     <PostOptions />
 
-    <PostAbout avatar={data.lastLiked.avatar} likes={data.likes} />
-    <Text style={styles.description}>{data.description}</Text>
+    <PostAbout 
+      avatar={data.lastLiked.avatar} 
+      likes={data.likes} 
+    />
+    
+    <PostDescription value={data.description} />
   </View>
 </View>
 };
